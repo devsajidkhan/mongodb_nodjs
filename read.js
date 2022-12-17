@@ -12,6 +12,8 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     }
 
     const db = client.db(databaseName)
-    db.collection("user").findOne({ name : "sjidkhanfgfftidjugfiudjd7iqw2"}, (err , res) => {console.log(res)})
+    db.collection("user").findOne({ _id : new ObjectID("638f2607cd05fe845ac7e132")}, (err , res) => {console.log(res)})
+    // db.collection("user").find({password : "1234"}).limit(2).toArray((err, res) => {console.log(res)})
+    db.collection("user").find({password : "1234"}).forEach(res => { console.log(res)});
 
 })
