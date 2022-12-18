@@ -3,3 +3,5 @@ https://mongodb.github.io/node-mongodb-native/4.12/
 https://stackoverflow.com/questions/45417385/how-do-i-post-data-into-mongodb-database-using-node-js
 https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
 https://www.mongodb.com/docs/manual/reference/operator/update/ update
+https://www.geeksforgeeks.org/what-are-the-advantages-of-using-mongoose-module/
+https://mongoosejs.com/docs/guide.html
