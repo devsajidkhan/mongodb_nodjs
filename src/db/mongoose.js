@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
+
 // const connectionURL = 'mongodb://localhost:27017';
 
 // const connection = mongoose.connect(connectionURL, { useNewUrlParser: true });
@@ -7,16 +9,41 @@ const mongoose = require('mongoose');
 //     console.log('Connected to MongoDB');
 // });
 const connection = mongoose.createConnection('mongodb://localhost:27017/Persons'); //  create a custom connection
+
 const user = connection .model('Users', {
-    name: { type: String},
-    age: {type: Number},
-    address: {type : String}
+    name: { 
+        type : String, 
+        required : true,
+        unique : true
+    },
+    email : {
+        type : String,
+        required : true,
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error('Email is invalid');
+            }
+        }
+    },
+    age: {
+        type : Number,
+        default : 0,
+        validate(value) {
+            if (value < 0) {
+                throw new Error('Age must be a postive number');
+            }
+        }
+    },
+    address: {
+        type : String
+    },
 });
 
 const insert = new user({
-    name : "sajid khan",
+    name : "usama",
+    email : "usama@gmail.com",
     age : 25,
-    address : "lahore"
+    address : "khanpur"
 });
 
 insert.save().then((response) =>{
