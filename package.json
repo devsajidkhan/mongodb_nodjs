@@ -5,5 +5,26 @@
     "mongoose": "^6.8.0",
     "Router": "^2.1.0",
     "validator": "^13.7.0"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "name": "mongodb_nodjs",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node /src/index.js",
+    "dev": "nodemon /src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsajidkhan/mongodb_nodjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devsajidkhan/mongodb_nodjs/issues"
+  },
+  "homepage": "https://github.com/devsajidkhan/mongodb_nodjs#readme",
+  "description": ""
 }
